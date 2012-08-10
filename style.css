@@ -1,0 +1,811 @@
+/******************************************************************
+Theme Name: Bones
+Theme URI: http://www.themble.com/bones
+Description: This site was built using the Bones Development Theme. For more information about Bones or to view documentation, you can visit the <a href="http://themble.com/docs/" title="Bones Documentation">Bones Documentation</a> page. You can also view the conversation on Twitter by following the hashtag: <a href="http://twitter.com/#!/search/%23wpbones">#wpbones</a>.
+Author: Eddie Machado
+Author URI: http://www.themble.com/bones/
+Version: 1.09
+Tags: html5, css3, fixed, development, bones, h5bp
+
+License: GPL or whatever
+License URI: http://www.gnu.org/copyleft/gpl.html
+
+All Default Styles are in library/css/normalize.css
+I reccommend not editing those files and making all
+changes here. That way if something goes awry, you
+can easily revert back to the original, but that's
+totally up to you. Happy Developing!
+******************************************************************/
+
+/******************************************************************
+GENERAL LAYOUT STYLES
+******************************************************************/
+
+body { background: url(library/images/classy_fabric.png); }
+
+/******************************************************************
+GRID STYLES
+******************************************************************/
+
+/* 960 Grid System (http://960.gs/ ) */
+
+#container, .wrap { 
+	width: 940px;
+	margin: 20px auto;
+	padding: 0 60px;
+	background: url(library/images/lghtmesh.png);
+	border: 3px solid #bbbbbb;
+	-webkit-box-shadow: 0px 0px 15px 4px rgba(0, 0, 0, 0.7);
+	box-shadow: 0px 0px 15px 4px rgba(0, 0, 0, 0.7);
+
+}
+	
+/******************************************************************
+COMMON & REUSABLE STYLES
+******************************************************************/
+
+/* floats */
+.left { float: left; }
+.right { float: right; }
+	
+/* text alignment */
+.text-left { text-align: left; }
+.text-center { text-align: center; }
+.text-right { text-align: right; }
+
+/* highlighting search term on search page */
+mark, .search-term { background: #EBE16F; }
+
+/* alerts & notices */
+.help, .info, .error, .success { margin: 10px; padding: 5px 18px; border: 1px solid #cecece; }
+.help { border-color: #E0C618; background: #EBE16F; }
+.info { border-color: #92cae4; background: #d5edf8; }
+.error { border-color: #fbc2c4; background: #fbe3e4; }
+.success { border-color: #c6d880; background: #e6efc2; } 
+
+/* 	To embed your own fonts, use this syntax
+	and place your fonts inside the 
+	library/fonts folder. For more information
+	on embedding fonts, go to:
+	http://www.fontsquirrel.com/
+	Be sure to remove the comment brackets.
+*/
+
+@font-face {
+    	font-family: 'GeosansLight';
+    	src: url('library/fonts/GeosansLight.ttf');
+    	src: url('library/fonts/GeosansLight.ttf?#iefix') format('embedded-opentype'),
+    	font-weight: normal;
+    	font-style: normal;
+	}
+
+@font-face {
+    	font-family: 'Bemio';
+    	src: url('library/fonts/Bemio.otf.ttf');
+    	src: url('library/fonts/Bemio.otf.ttf?#iefix') format('embedded-opentype'),
+    	font-weight: normal;
+    	font-style: normal;
+	}
+	
+/******************************************************************
+LINK STYLES
+******************************************************************/
+
+a, a:visited { color: #555e63; }
+a:hover, a:focus { color: #555e63; }
+a:active {} /* on click */
+a:link { -webkit-tap-highlight-color : rgba(0,0,0,0); /* this highlights links on Iphones / iPads */ }
+
+/******************************************************************
+TEXT SELECTION STYLES
+******************************************************************/
+
+/* Highlighted Text */
+::selection { 
+	background: #6fc2f6; 
+	color:#fff; 
+	text-shadow : none; 
+}
+
+/* Firefox */
+::-moz-selection { 
+	background: #6fc2f6; 
+	color:#fff; 
+	text-shadow : none; 
+}
+
+/******************************************************************
+WORDPRESS BODY CLASSES
+want to style a page via body class? go ahead
+******************************************************************/
+
+.rtl {}
+.home {} /* home page */
+.blog {} 
+.archive {} /* archive page */
+.date {} /* date archive page */
+	.date-paged-1 {} /* replace the number to the corresponding page number */
+.search {} /* search page */
+	.search-results {} /* search result page */
+	.search-no-results {} /* no results search page */
+	.search-paged-1 {} /* individual paged search (i.e. body.search-paged-3) */
+.error404 {} /* 404 page */
+.single {} /* single post page */
+	.postid-1 {} /* individual post page by id (i.e. body.postid-73) */
+	.single-paged-1 {} /* individual paged single (i.e. body.single-paged-3) */
+.attachment {} /* attatchment page */
+	.attachmentid-1 {} /* individual attatchment page (i.e. body.attachmentid-763) */
+	.attachment-mime-type {} /* style mime type pages */
+.author {} /* author page */
+	.author-nicename {} /* user nicename (i.e. body.author-samueladams) */
+	.author-paged-1 {} /* paged author archives (i.e. body.author-paged-4) for page 4 */
+.category {} /* category page */
+	.category-1 {} /* individual category page (i.e. body.category-6) */
+	.category-paged-1 {} /* replace the number to the corresponding page number */
+.tag {} /* tag page */
+	.tag-slug {} /* individual tag page (i.e. body.tag-news) */
+	.tag-paged-1 {} /* replace the number to the corresponding page number */
+.page-template {} /* custom page template page */
+	.page-template-page-php {} /* individual page template (i.e. body.page-template-contact-php */
+	.page-paged-1 {} /* replace the number to the corresponding page number */
+	.page-parent {}
+	.page-child {}
+	.parent-pageid-1 {} /* replace the number to the corresponding page number */
+.logged-in {} /* if user is logged in */
+.paged {} /* paged items like search results or archives */
+	.paged-1 {} /* individual paged (i.e. body.paged-3) */
+
+/******************************************************************
+HEADLINES & TITLES
+******************************************************************/
+
+h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5 { font-family: sans-serif; font-weight: 500; }
+h1 a, .h1 a, h2 a, .h2 a, h3 a, .h3 a, h4 a, .h4 a, h5 a, .h5 a { text-decoration: none; text-align: left;}
+h1, .h1 { font-size: 2.5em; line-height: 1.333em; font-family: "Bemio", sans-serif; text-align: center;}
+h2, .h2 { font-family: "GeosansLight", sans-serif; font-size: 20px; color: #555e63; }
+h3, .h3 { font-size: 1.125em; }
+h4, .h4 { font-size: 1.1em; font-weight: 700; }
+h5, .h5 { font-size: 0.846em; line-height: 2.09em; text-transform: uppercase; letter-spacing: 2px; }
+
+.h1_portfolio, .h1_sketchbook, .single-title {
+	margin: 0 auto;
+	padding: 0;
+	border-bottom: 1px solid #cecece;
+	width: 300px;
+	height: 33px;
+}
+.h2_portfolio {
+	font-family: "GeosansLight", sans-serif;
+	font-size: 1.7em;
+	margin: 0 0 20px;
+}
+.h2_sketch {
+	font-family: "GeosansLight", sans-serif;
+	font-size: 2.2em;
+	margin: 10px 0;
+}
+
+.h2_blog {
+	text-align: left;
+	margin-left: 2em;
+	font-size: 2.5em;
+	text-decoration: none;
+	font-family: "GeosansLight", sans-serif;
+}
+.h2_blog:hover {
+	font-style: italic
+}
+/******************************************************************
+HEADER SYTLES
+******************************************************************/
+
+header[role=banner] {}
+	#logo { 
+		position: absolute;
+		left:-9999px;
+	 }
+#site-logo {
+	background: url(library/images/logo.png) no-repeat;
+	height: 147px;
+	width: 269px;
+	float: left;
+	position: relative;
+	top: -23px;
+}
+
+/* Basic jQuery Slider essential styles */
+
+ul.bjqs{position:relative; list-style:none;padding:0;margin:0;overflow:hidden; display:none;}
+li.bjqs-slide{display:none;position:absolute;}
+
+ul.bjqs-controls{list-style:none;margin:0;padding:0;z-index:9999;}
+
+ol.bjqs-markers{list-style:none;margin:0;padding:0;z-index:9999;}
+ol.bjqs-markers li{float:left;}
+p.bjqs-caption{display:block;width:96%;margin:0;padding:2%;position:absolute;bottom:0;}
+
+.slider_caption {
+	position: absolute;
+	z-index: 100;
+	width: 100%;
+	height: 35px;
+	margin-top: 290px;
+	padding: 10px;
+	background-color: #333;
+	color: #fff;
+	opacity: 0;
+	-moz-opacity: 0;
+	filter:alpha(opacity=0);
+	-webkit-transition: all ease-in-out 0.3s;
+	transition: all ease-in-out .3s;
+	-moz-transition: all ease-in-out .3s;
+}
+
+#image_slider:hover .slider_caption {
+	opacity: 0.7;
+	-moz-opacity: 0.7;
+	filter:alpha(opacity=7);
+}
+
+/* demo styles */
+
+
+#image_slider {
+  height:330px;
+  width:920px;
+  margin:0 auto;
+  position:relative;
+  background:#fff;
+  border: 3px solid #444c51;
+  box-shadow:0 0 10px 1px rgba(0,0,0,0.5);
+
+}
+
+ ul.bjqs-controls li a{
+ 	width: 46px;
+  	height: 100px;
+   	position:absolute;
+   	opacity: 0.5;
+   	-moz-opacity: 0.5;
+   	filter:alpha(opacity=5);
+   	-webkit-transition: all ease-in-out 0.3s;
+	transition: all ease-in-out .3s;
+	-moz-transition: all ease-in-out .3s;
+}
+ ul.bjqs-controls li a:hover {
+ 	opacity: 1;
+ 	-moz-opacity: 1;
+ 	filter:alpha(opacity=1);
+ }
+
+a.bjqs-prev{
+  left:-60px;
+  background: url(library/images/arrows.png) no-repeat top left;
+}
+
+a.bjqs-next{
+  right:-60px;
+   background: url(library/images/arrows.png) no-repeat top right;
+}
+
+ p.bjqs-caption{
+  background:rgba(0,0,0,0.7);
+  color:#fff;
+  text-align:center;
+}
+
+ ol.bjqs-markers{
+  position:absolute;
+  bottom:-50px;
+}
+
+ ol.bjqs-markers li{
+  float:left;
+  margin:0 3px;
+}
+
+ ol.bjqs-markers li a{
+  display:block;
+  height:10px;
+  width:10px;
+  border:4px solid #fff;
+  overflow:hidden;
+  text-indent:-9999px;
+  background:#000;
+  border-radius:10px;
+  box-shadow:0 0 50px rgba(0,0,0,0.5);
+}
+
+ol.bjqs-markers li.active-marker a{
+  background:#fd0100;
+}
+
+/******************************************************************
+NAVIGATION STYLES
+(Main Navigation)
+******************************************************************/
+nav[role=navigation] {}
+
+	nav[role=navigation] .menu {
+		float: right;
+		margin-top: 25px;
+		font-family: "GeosansLight", sans-serif;
+	}
+	nav[role=navigation] .menu ul { 
+	}
+		nav[role=navigation] .menu ul li {
+			float: left;
+		}
+			nav[role=navigation] .menu ul li a { 
+				color: #555e63;
+				padding: 10px 13px;
+				display: block; 
+				text-decoration: none;
+				font-size: 24px;
+			}
+				nav[role=navigation] .menu ul li a:hover { 
+					text-decoration: underline;
+				}
+				
+				nav[role=navigation] .menu ul li:first-child a {}
+				
+		nav[role=navigation] .menu ul li.current-menu-item a, 
+		nav[role=navigation] .menu ul li.current_page_item a,
+		nav[role=navigation] .menu ul li.current-page-ancestor a {
+			text-decoration: underline;
+		}
+
+		/* sub menus */
+		nav[role=navigation] .menu ul li ul, nav[role=navigation] .menu ul li ul li ul { 
+			background: #4598bb;
+			position: absolute; 
+			left: -9999em; 
+			z-index: 9999; 
+			width: 200px; 
+		}
+			nav[role=navigation] .menu ul li ul li ul { 
+				margin-left: 200px; 
+				top: auto; 
+				margin-top: -30px; 
+			}
+			nav[role=navigation] .menu ul li ul li:hover ul, nav[role=navigation] .menu ul li:hover ul { 
+				left: auto; 
+			}
+			nav[role=navigation] .menu ul li ul li a { 
+				width: 160px; 
+			}
+			
+			nav[role=navigation] .menu ul li ul li a {}
+				nav[role=navigation] .menu ul li ul li a:hover {}
+			nav[role=navigation] .menu ul li ul li:last-child a {}
+
+				nav[role=navigation] .menu ul li ul li ul.sub-menu { }
+					nav[role=navigation] .menu ul li ul li:hover ul.sub-menu { }
+
+
+
+
+
+
+/******************************************************************
+POSTS & CONTENT STYLES
+******************************************************************/
+ul.soc-media {
+	list-style-type: none;	
+	width: 250px;
+	margin: 0 !important;
+	position: relative;
+	top: -51px;
+	left: 750px;
+}
+li.soc-item {
+	float: left;
+	width: 95px;
+	margin: 0 !important;
+}
+
+#content {}
+	#main {}
+	
+		.hentry { }
+		
+		.single-title { 
+			display: block;
+			text-align: left;
+			margin-left: 1em;
+			margin-bottom: 1em;
+			font-size: 2.5em;
+			text-decoration: none;
+			font-family: "GeosansLight", sans-serif;
+			color: #555e63;
+			width: 800px;
+			padding-right: 80px;
+
+		}
+		.page-title {}
+		.archive_title { padding: 0 20px; margin: 1.1em 0 0.75em; }
+	
+		/* want to style individual post classes? Booya! */
+		.post-id {} /* post by id (i.e. post-3) */
+		.post {
+			float: left; 
+			} /* general post style */
+
+		#portfolio_single img {
+			min-width: 1060px;
+			height: 100%;
+			position: relative;
+			left: -60px;
+		}
+		#portfolio_single .post_content {
+
+		}
+
+		.page {} /* general article on a page style */
+		.attachment {} /* general style on an attatchment */
+		.sticky {} /* sticky post style */
+		.hentry {} /* hentry class */
+		.category-slug {} /* style by category (i.e. category-videos) */
+		.tag-slug {} /* style by tag (i.e. tag-news) */
+	
+		/* post meta */
+		.meta { font-size:0.9em; letter-spacing:0.05em; line-height:1.75em; color: #999; margin: 0.875em 0; }
+			.meta time {}
+			
+		/* post content */
+		.post_portfolio {
+			overflow: hidden;
+			height: 174px;
+			width: 285px;
+			margin: 0 20px 20px 0;
+			text-align: center;
+			border: 3px solid #555e63;
+			border-radius: 3px;
+			-webkit-border-radius: 3px;
+			-moz-border-radius: 3px;
+			-o-border-radius: 3px;
+			-webkit-transition: all ease-in-out 0.2s;
+			-moz-transition: all ease-in-out .2s;
+			transition: all ease-in-out 0.2s;
+			-webkit-box-shadow: 0px 1px 6px 2px rgba(0, 0, 0, 0.5);
+			box-shadow: 0px 1px 6px 2px rgba(0, 0, 0, 0.5);
+		}
+		.post_portfolio:hover {
+			position: relative; 
+		}
+		.post_portfolio img {
+			-webkit-transition: all ease-in-out 0.3s;
+			-moz-transition: all ease-in-out .3s;
+			transition: all ease-in-out 0.3s;
+		}
+		.post_portfolio img:hover {
+			transform: scale(1.05);
+			-webkit-transform: scale(1.05);
+			-moz-transform: scale(1.05);
+			opacity: 0.8;
+			-moz-opacity: 0.8;
+			filter:alpha(opacity=8);
+			-webkit-box-shadow: 0px 1px 6px 2px rgba(0, 0, 0, 0.5);
+		}
+
+		.post_sketch img {
+			position: relative;
+			left: -60px;
+			max-width: 1060px;
+		}
+		.post_sketch {
+			width: 930px;
+		}
+		.post_sketch p{
+			width: 930px;
+		}
+		.post_blog img {
+			
+		}
+			.post_content a img {max-width: 1060px;}
+			.post_content p { margin: 0 0 1.5em 0; line-height: 1.5em; }
+			.post_content ul, .post_content ol, .post_content table, .post_content dl { margin: 1.5em 0; }
+			.post_content ul, .post_content ol { list-style-position:outside; line-height:1.5; margin-left: 3em; margin-right: 2.2em; }
+			.post_blog ul, .post_blog ol { list-style-position:outside; line-height:1.5; margin-left: 3em; margin-right: 2.2em; }
+			.post_content li { margin-bottom: 0.75em; }
+			.post_content ul li { list-style-type: disc; }
+			.post_content ol li { list-style-type: decimal; }
+			
+			.post_content blockquote { font-style:italic; line-height:1.6em; margin: 1.5em 2.2em; }
+			.post_content blockquote:before { font-family:Georgia, serif; content: "“"; font-size:2.75em; text-indent:-.8em; margin-top:.1em; float:left; opacity:.3; } /* this adds the quote before the blockquote */
+			
+			.post_content dl { margin:1.75em 0 1.75em; }
+			.post_content dt { margin-top: 1.25em; font-weight:700; }
+			.post_content dd { font-style: italic; margin-top:0.5em; line-height:1.6em; }
+			
+			.post_content img { margin: 0 0 1.5em 0; }
+			.alignleft, img.alignleft { margin-right: 1.5em; display: inline; float: left; }
+			.alignright, img.alignright { margin-left: 1.5em; display: inline; float: right; }
+			.aligncenter, img.aligncenter { margin-right: auto; margin-left: auto; display: block; clear: both; }
+			
+			.post_content video { margin: 1.5em 0; max-width: 100%; display: block; }
+			.post_content object { display: block; margin: 1.5em 0; max-width: 100%; }
+			.post_content pre, .post_content code { font-size: 0.9em; line-height: 1.7em; padding: 1em; background: #eee; border: 2px solid #cecece; }
+			
+			.wp-caption { margin-bottom: 1.5em; text-align: center; padding-top: 5px; }
+			.wp-caption img { border: 0 none; padding: 0; margin: 0; }
+			.wp-caption .wp-caption-text { font-size:0.8em; font-style:italic; margin:.6em 0 -.2em; }
+			
+			/* image gallery styles */
+			.gallery dl {}
+			.gallery dt {}
+			.gallery dd {}
+			.gallery dl a {}
+			.gallery dl img {}
+			.gallery-caption {}
+			
+			.size-full {}
+			.size-large {}
+			.size-medium {}
+			.size-thumbnail {}
+			
+		.hentry footer { clear: both; margin: 1.5em 0 0; padding-bottom: 2.2em; }
+	
+	
+
+/******************************************************************
+Contact form styles
+******************************************************************/
+
+div.wpcf7 {
+	margin: 0 auto 50px;
+	padding: 0;
+	width: 400px;
+	float: left;
+}
+
+div.wpcf7-response-output {
+	margin: 2em 0.5em 1em;
+	padding: 0.2em 1em;
+}
+
+div.wpcf7-mail-sent-ok {
+	border: 2px solid #398f14;
+}
+
+div.wpcf7-mail-sent-ng {
+	border: 2px solid #ff0000;
+}
+
+div.wpcf7-spam-blocked {
+	border: 2px solid #ffa500;
+}
+
+div.wpcf7-validation-errors {
+	border: 2px solid #f7e700;
+}
+
+span.wpcf7-form-control-wrap {
+	position: relative;
+}
+
+span.wpcf7-not-valid-tip {
+	position: absolute;
+	top: 20%;
+	left: 20%;
+	z-index: 100;
+	background: #fff;
+	border: 1px solid #ff0000;
+	font-size: 10pt;
+	width: 280px;
+	padding: 2px;
+}
+
+span.wpcf7-not-valid-tip-no-ajax {
+	color: #f00;
+	font-size: 10pt;
+	display: block;
+}
+
+span.wpcf7-list-item {
+	margin-left: 0.5em;
+}
+
+.wpcf7-display-none {
+	display: none;
+}
+
+div.wpcf7 img.ajax-loader {
+	border: none;
+	vertical-align: middle;
+	margin-left: 4px;
+}
+
+div.wpcf7 .watermark {
+	color: #888;
+}
+div.wpcf7 input, div.wpcf7 textarea {
+	border: none;
+	outline: none;
+	background-color: #DDD;
+	color: #404041;
+	border: 1px solid #ddd;
+}
+div.wpcf7 input:focus, div.wpcf7 textarea:focus {
+	border: 1px solid #b7b7b7;
+}
+div.wpcf7 input {
+	font-size: 1.3em;
+	width: 400px;
+	padding: 5px;
+}
+div.wpcf7 textarea {
+	resize: none;
+	overflow: hidden;
+	width: 400px;
+	padding: 3px 5px;
+}
+.wpcf7-form-control.wpcf7-submit {
+	width: 100px;
+	font-size: 1.2em;
+	position: relative;
+	background-color: #ddd;
+	border: none;
+	height: 1.8em;
+}
+.wpcf7-form-control.wpcf7-submit:hover{
+	background-color: #ccc;
+}
+
+
+/******************************************************************
+PAGE NAVI STYLES
+(Special Feature)
+******************************************************************/
+
+/* page navigation */
+.page-navigation, .wp-prev-next { margin: 1.1em 0 2.2em; }
+	.bones_page_navi, .wp-prev-next ul { }
+		.bones_page_navi li { float: left; margin-left: 10px; } 
+			.bones_page_navi li a { padding: 3px 6px; display: block; text-decoration: none; position: relative; }
+				.bones_page_navi li a:hover { color: #f01d4f; text-decoration: underline; }
+		.bones_page_navi li.bpn-current { padding: 3px 6px; border-bottom: 2px solid #f01d4f; position: relative; } /* current page link */
+				.bones_page_navi li.bpn-current:hover {}
+		.bones_page_navi li.bpn-prev-link { } /* previous link */
+			.bones_page_navi li.bpn-prev-link a { padding: 0; }
+				.bones_page_navi li.bpn-prev-link a:hover { background: none; }
+		.bones_page_navi li.bpn-next-link { font-weight: 700; } /* next page link */
+			.bones_page_navi li.bpn-next-link a { padding: 0; }
+				.bones_page_navi li.bpn-next-link a:hover { background: none; }
+		.bones_page_navi li.bpn-last-page-link {} /* last page link */
+			.bones_page_navi li.bpn-last-page-link a {}
+				.bones_page_navi li.bpn-last-page-link a:hover { background: none; }
+		.bones_page_navi li.bpn-first-page-link {} /* first page link */
+			.bones_page_navi li.bpn-first-page-link a {}
+				.bones_page_navi li.bpn-first-page-link a:hover { background: none; }
+	
+	/* fallback previous & next links */
+	.wp-prev-next {}
+		.wp-prev-next ul {}
+			.wp-prev-next .prev-link { float: left; }
+			.wp-prev-next .next-link { float: right; }
+
+		
+
+/******************************************************************
+SIDEBARS & ASIDES
+******************************************************************/
+#pippin_recent_posts-3 {
+		
+	margin-top: 20px;
+}
+.no-bullets {
+	margin-top: 20px;
+	padding-top: 20px;
+	width: 100%;
+	border-top: 1px solid #cecece;
+}
+.no-bullets li a {
+	text-decoration: none;
+	font-size: 1.1em;
+}
+.no-bullets li img {
+	margin-bottom: 10px;
+}
+.no-bullets li {
+	display: block;
+	width: 150px;
+	height: 200px;
+	margin: 0 15px 20px 0;
+	float: left;
+	opacity: 0.7;
+	-moz-opacity: 0.7;
+	filter:alpha(opacity=7);
+	-webkit-transition: all 0.3s ease-in-out;
+	-moz-transition: all 0.3s ease-in-out;
+	-ms-transition: all 0.3s ease-in-out;
+	-o-transition: all 0.3s ease-in-out;
+	transition: all 0.3s ease-in-out;
+	border: 3px solid #555e63;
+	border-radius: 3px;
+	-webkit-border-radius: 3px;
+	-moz-border-radius: 3px;
+	-o-border-radius: 3px;
+	-webkit-box-shadow: 0px 1px 6px 2px rgba(0, 0, 0, 0.5);
+	box-shadow: 0px 1px 6px 2px rgba(0, 0, 0, 0.5);
+}
+.no-bullets li:hover {
+	opacity: 1;
+	-moz-opacity: 1;
+	filter:alpha(opacity=1);
+}
+/******************************************************************
+FOOTER STYLES
+******************************************************************/
+
+footer[role=contentinfo] { border-top: 1px solid #cecece; padding: 1.1em 0 3.3em; margin-top: 2.2em; }
+
+	/* footer menu */
+	footer[role=contentinfo] nav { float: left; margin: 1em 0; }
+	.footer-links {}
+		.footer-links ul { margin-top: 0; }
+			.footer-links ul li { list-style-type: none; float: left; font-size: 0.9em; }
+				.footer-links ul li a { margin-right: 10px; text-decoration: underline; }
+					.footer-links ul li:last-child a { margin-right: 0; }
+			.footer-links ul li a:hover, .nav ul li.current-menu-item a, .nav ul li.current_page_item a {}
+			.footer-links ul li ul.sub-menu { display: none; } /* you shouldn't have that many links in the footer anyway so it's set to display none ;P */
+			
+	.attribution { margin: 1em 0; float: right; color: #999; font-size: 0.9em; }
+	
+/******************************************************************
+MEDIA QUERIES & DEVICE STYLES
+To use a responsive design, it's reccomended to use the responsive version of Bones. You can find it on github: https://github.com/eddiemachado/bones-responsive
+******************************************************************/
+
+@media only screen and (min-width: 480px) {
+	/* insert styles here */
+}
+
+@media only screen and (min-width: 768px) {
+/* insert styles here */
+}
+
+@media only screen and (min-width: 992px) {
+/* insert styles here */
+}
+
+@media only screen and (min-width: 1382px) {
+/* insert styles here */
+}
+
+@media only screen and (-webkit-min-device-pixel-ratio: 2), only screen and (min-device-pixel-ratio: 2) {
+/* insert styles here */
+}
+
+/******************************************************************
+PRINT STYLES
+(Handled by default, but if you want to edit it, feel free)
+******************************************************************/
+
+@media print { }
+
+/******************************************************************
+IE SPECIFIC FIXES
+******************************************************************/
+
+/*
+Thanks to the HTML5 Boilerplate there's an easier way
+to target IE specific bugs. Simply use the html class
+to target the specific version of IE.
+
+To target the .post_content area in IE6, use:
+html.ie6 .post_content { ... }
+
+To target the .post_content area in IE7, use:
+html.ie7 .post_content { ... }
+
+To target the .post_content area in IE8, use:
+html.ie8 .post_content { ... }
+
+To target the .post_content area in older IE use:
+html.oldie .post_content { ... }
+
+Much easier right? This way, you don't have to call
+any more stylesheets, you can leave it at the bottom
+and it will overwrite depending on the html class.
+*/

@@ -1,0 +1,121 @@
+/******************************************************************
+Bones Custom Login Stylesheet
+
+Designed by Eddie Machado
+http://themble.com/bones
+hello@themble.com
+
+This stylesheet is loaded (if admin.php is setup in your 
+functions file) on the login page. This way you can style 
+the login page. It won't affect any other page, admin or front-end.
+
+For more info, check out the codex:
+http://codex.wordpress.org/Creating_Admin_Themes
+
+******************************************************************/
+
+
+body.login {
+	background: #3c3c3c; /* Old browsers */
+	background: -moz-linear-gradient(left,  #3c3c3c 0%, #666666 50%, #3c3c3c 100%); /* FF3.6+ */
+	background: -webkit-gradient(linear, left top, right top, color-stop(0%,#3c3c3c), color-stop(50%,#666666), color-stop(100%,#3c3c3c)); /* Chrome,Safari4+ */
+	background: -webkit-linear-gradient(left,  #3c3c3c 0%,#666666 50%,#3c3c3c 100%); /* Chrome10+,Safari5.1+ */
+	background: -o-linear-gradient(left,  #3c3c3c 0%,#666666 50%,#3c3c3c 100%); /* Opera 11.10+ */
+	background: -ms-linear-gradient(left,  #3c3c3c 0%,#666666 50%,#3c3c3c 100%); /* IE10+ */
+	background: linear-gradient(left,  #3c3c3c 0%,#666666 50%,#3c3c3c 100%); /* W3C */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#3c3c3c', endColorstr='#3c3c3c',GradientType=1 ); /* IE6-9 */
+
+	width: 100%;
+	height: 100%;
+	overflow: hidden;
+} 
+
+
+#login {
+	position: absolute;
+	width: 310px;
+	height: 100%;
+	background-color: #fff;
+	left: 50%;
+	margin-left: -155px;
+	-webkit-box-shadow: 0px 0px 10px 2px rgba(37, 37, 37, 1);
+	-moz-box-shadow: 0px 0px 10px 2px rgba(37, 37, 37, 1);
+	box-shadow: 0px 0px 10px 2px rgba(37, 37, 37, 1);
+	} /* the form box */
+
+/*
+This is the Wordpress logo in the admin area.
+You'll have to load your own images and mess
+with the width and height.
+*/
+
+#login h1 a {
+	width: 232px;
+	height: 149px;
+	text-indent: -9999px;
+	overflow: hidden;
+	margin: -70px auto 5px;
+	display: block;
+}
+
+p, a, label, input {
+	color: #676767;
+	font-size: 14px;
+}
+
+#nav a {
+	color: #676767;
+}
+
+#loginform, #lostpasswordform {
+	margin: -20px 0 0 8px;
+	background: none;
+	border:none;
+	-webkit-border-radius: none;
+	 -khtml-border-radius: none;
+	   -moz-border-radius: none;
+			border-radius: none;
+	-webkit-box-shadow: none;
+	 -khtml-box-shadow: none;
+	   -moz-box-shadow: none;
+			box-shadow: none;
+}
+#loginform label {
+	margin-left: 15px;
+}
+#user_login, #user_pass {
+	width: 248px;
+	height: 35px;
+	background-color: #dcdcdc;
+	border-radius: 10px;
+	border: none;
+	outline: none;
+	padding: 5px 14px;
+	font-size: 24px;
+}
+
+#loginform .forgetmenot {
+	margin: 10px 0 0 -15px;
+}
+
+#wp-submit {
+	background-image: none;
+	background-color: #dcdcdc;
+	height: 34px;
+	border: none;
+	border-radius: 10px;
+	float: right;
+	margin: 0 5px 0 0;
+	color: #676767 !important;
+	font-style: normal;
+	text-shadow: none !important;
+	} /* login button*/
+#wp-submit:hover {
+	background-color: #e9e9e9;
+}
+#login .message {
+	background-color: #fff;
+	border: none;
+	text-align: center;
+	margin-left: 0;
+}
